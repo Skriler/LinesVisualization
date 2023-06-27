@@ -95,6 +95,9 @@ namespace LinesVisualization.Classes.Services
 
         public bool IsCharacteristicsEquals(string firstCharc, string secondCharc)
         {
+            if (firstCharc == string.Empty && secondCharc == string.Empty)
+                return false;
+
             double firstNumb;
             double secondNumb;
 
@@ -103,10 +106,23 @@ namespace LinesVisualization.Classes.Services
 
             if (isFirstCharcNumber && isSecondCharcNumber)
             {
-                double minPossibleBorder = firstNumb * settings.MinPossibleCoeff;
-                double maxPossibleBorder = firstNumb * settings.MaxPossibleCoeff;
+                double minPossibleBorder;
+                double maxPossibleBorder;
 
-                return minPossibleBorder <= secondNumb && secondNumb <= maxPossibleBorder;
+                if (firstNumb >= secondNumb)
+                {
+                    minPossibleBorder = firstNumb * settings.MinPossibleCoeff;
+                    maxPossibleBorder = firstNumb * settings.MaxPossibleCoeff;
+
+                    return minPossibleBorder <= secondNumb && secondNumb <= maxPossibleBorder;
+                }
+                else
+                {
+                    minPossibleBorder = secondNumb * settings.MinPossibleCoeff;
+                    maxPossibleBorder = secondNumb * settings.MaxPossibleCoeff;
+
+                    return minPossibleBorder <= firstNumb && firstNumb <= maxPossibleBorder;
+                }
             }
             else
             {

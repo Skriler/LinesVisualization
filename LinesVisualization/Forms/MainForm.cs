@@ -76,7 +76,7 @@ namespace LinesVisualization.Forms
                     dbManager.DropTable(settings.TableName);
                     settings.SetDefaultValues();
 
-                    MessageBox.Show("Previous data deleted!", "Success");
+                    MessageBox.Show("Previous data deleted!", "Info");
                 }
 
                 File.Copy(filePath, destinationPath);
@@ -99,17 +99,15 @@ namespace LinesVisualization.Forms
 
         private void showToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataSet dataSet = null;
-
             try
             {
                 if (!dbManager.IsDatabaseExist() || !dbManager.IsTableExist(settings.TableName))
                 {
-                    MessageBox.Show($"Nothing to show", "Error");
+                    MessageBox.Show($"Nothing to show", "Info");
                     return;
                 }
 
-                dataSet = dbManager.GetAllTableData(settings.TableName);
+                DataSet dataSet = dbManager.GetAllTableData(settings.TableName);
 
                 if (dataSet != null)
                 {
@@ -128,7 +126,7 @@ namespace LinesVisualization.Forms
         {
             if (nodes == null)
             {
-                MessageBox.Show($"No data", "Error");
+                MessageBox.Show($"No data to visualize", "Info");
                 return;
             }
 
@@ -160,7 +158,7 @@ namespace LinesVisualization.Forms
         {
             if (nodes == null)
             {
-                MessageBox.Show($"No data to configure");
+                MessageBox.Show($"No data to configure", "Info");
                 return;
             }
 

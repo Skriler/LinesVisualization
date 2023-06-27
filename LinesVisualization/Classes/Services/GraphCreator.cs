@@ -64,7 +64,9 @@ namespace LinesVisualization.Classes.Services
                     if (currentEdge != null)
                         continue;
 
-                    graph.AddEdge(item.Key.Name, nodeObject.Name);
+                    currentEdge = graph.AddEdge(item.Key.Name, nodeObject.Name);
+                    currentEdge.Attr.ArrowheadAtSource = ArrowStyle.None;
+                    currentEdge.Attr.ArrowheadAtTarget = ArrowStyle.None;
                 }
             }
 

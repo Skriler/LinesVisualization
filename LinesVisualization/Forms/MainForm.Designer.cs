@@ -53,6 +53,7 @@
             dgvTableData.RowTemplate.Height = 25;
             dgvTableData.Size = new Size(640, 520);
             dgvTableData.TabIndex = 1;
+            dgvTableData.Visible = false;
             // 
             // graphViewer
             // 
@@ -92,6 +93,7 @@
             graphViewer.ToolBarIsVisible = true;
             graphViewer.Transform = (Microsoft.Msagl.Core.Geometry.Curves.PlaneTransformation)resources.GetObject("graphViewer.Transform");
             graphViewer.UndoRedoButtonsVisible = true;
+            graphViewer.Visible = false;
             graphViewer.WindowZoomButtonPressed = false;
             graphViewer.ZoomF = 1D;
             graphViewer.ZoomWindowThreshold = 0.05D;
@@ -166,7 +168,7 @@
             MinimumSize = new Size(680, 600);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Lines visualization";
+            Text = "Lines Visualization";
             Load += MainForm_Load;
             Resize += MainForm_Resize;
             ((System.ComponentModel.ISupportInitialize)dgvTableData).EndInit();

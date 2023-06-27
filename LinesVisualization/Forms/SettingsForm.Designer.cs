@@ -142,9 +142,9 @@
             lblSelectedFields.AutoSize = true;
             lblSelectedFields.Location = new Point(280, 10);
             lblSelectedFields.Name = "lblSelectedFields";
-            lblSelectedFields.Size = new Size(95, 15);
+            lblSelectedFields.Size = new Size(129, 15);
             lblSelectedFields.TabIndex = 10;
-            lblSelectedFields.Text = "Selected headers";
+            lblSelectedFields.Text = "Selected characteristics";
             // 
             // SettingsForm
             // 
@@ -164,7 +164,7 @@
             Controls.Add(trcbrSimilarCharcAmount);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "SettingsForm";
-            Text = "SettingsForm";
+            Text = "Settings";
             Load += SettingsForm_Load;
             ((System.ComponentModel.ISupportInitialize)trcbrSimilarCharcAmount).EndInit();
             ((System.ComponentModel.ISupportInitialize)trcbrMaxDeviationPercent).EndInit();
